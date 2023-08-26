@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import { Greet } from "./Greet";
+import { Greet } from "../components/greet/Greet";
 
 describe("Greet", () => {
   test("renders correctly", () => {
@@ -16,8 +16,3 @@ describe("Greet", () => {
     });
   });
 });
-
-// one test file can have nested describe and multiple describe methods
-
-// .only - runs on particular test
-// .skip - skips the test
