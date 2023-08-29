@@ -6,7 +6,7 @@ export const Skills = ({ skills }: SkillsProps) => {
   const [islogin, setIslogin] = useState<Boolean>(false);
 
   useEffect(() => {
-    setTimeout(() => setIslogin(true), 1000);
+    setTimeout(() => setIslogin(true), 500);
   }, []);
 
   return (
