@@ -1,12 +1,13 @@
 // import { Greet } from "./components/greet/Greet";
-
-import { Application } from "./components/application/Application";
+// import { Application } from "./components/application/Application";
+import { Skills } from "./components/skills/Skills";
 
 function App() {
   return (
     <>
       {/* <Greet name="Raktim" /> */}
-      <Application />
+      {/* <Application /> */}
+      <Skills skills={["HTML", "CSS", "Javascript"]} />
     </>
   );
 }

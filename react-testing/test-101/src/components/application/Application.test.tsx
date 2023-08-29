@@ -17,6 +17,27 @@ describe("Application", () => {
     const paragraphText = screen.getByText("All fields are mandatory");
     expect(paragraphText).toBeInTheDocument();
 
+    const pText2 = screen.getByText("all fields", { exact: false });
+    expect(pText2).toBeInTheDocument();
+
+    const pText3 = screen.getByText("All fields are MANDATORY", { exact: false });
+    expect(pText3).toBeInTheDocument();
+
+    const pText4 = screen.getByText(/All fields are mandatory/);
+    expect(pText4).toBeInTheDocument();
+
+    const pText5 = screen.getByText(/MANDATORY/i);
+    expect(pText5).toBeInTheDocument();
+
+    const pText6 = screen.getByText(/^all fields are MANDATORY$/i);
+    expect(pText6).toBeInTheDocument();
+
+    const pText7 = screen.getByText((content) => content.endsWith("mandatory"));
+    expect(pText7).toBeInTheDocument();
+
+    const pText8 = screen.getByText((content) => content.startsWith("All"));
+    expect(pText8).toBeInTheDocument();
+
     const imageAltElement = screen.getByAltText("a random pixel");
     expect(imageAltElement).toBeInTheDocument();
 
