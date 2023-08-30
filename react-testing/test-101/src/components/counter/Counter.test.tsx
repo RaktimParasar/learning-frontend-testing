@@ -30,6 +30,36 @@ describe("counter", () => {
       expect(countElement).toHaveTextContent(i.toString());
     }
   });
+
+  test("renders a count of 10 after clicking the set button", async () => {
+    user.setup();
+    render(<Counter />);
+    const amountInput = screen.getByRole("spinbutton");
+    // sets the amount
+    await act(async () => await user.type(amountInput, "10"));
+    expect(amountInput).toHaveValue(10);
+    const setButton = screen.getByRole("button", {
+      name: "Set",
+    });
+    await act(async () => await user.click(setButton));
+    // checks the amount
+    const countElement = screen.getByRole("heading");
+    expect(countElement).toHaveTextContent("10");
+  });
+
+  test("focus on tab", async () => {
+    user.setup();
+    render(<Counter />);
+    const incrementBtn = screen.getByRole("button", { name: "Increment" });
+    const amountInput = screen.getByRole("spinbutton");
+    const setButton = screen.getByRole("button", { name: "Set" });
+    await act(async () => await user.tab());
+    expect(incrementBtn).toHaveFocus();
+    await act(async () => await user.tab());
+    expect(amountInput).toHaveFocus();
+    await act(async () => await user.tab());
+    expect(setButton).toHaveFocus();
+  });
 });
 
 /**
@@ -41,6 +71,7 @@ describe("counter", () => {
  * tripleClick()
  * hover()
  * unhover()
+ * tab()
  *
  * Pointer APIs
  * pointer({keys: "[MouseLeft]"})
@@ -48,4 +79,19 @@ describe("counter", () => {
  * pointer("[MouseLeft][Mouseright]")
  * pointer("[MouseLeft>]")
  * pointer("[/MouseLeft]")
+ *
+ * Utility APIs
+ * clear()
+ * selectOptions()
+ * deselectOptions()
+ * upload()
+ *
+ * Clipboard APIs
+ * copy()
+ * cut()
+ * paste()
+ *
+ * Keyboard APIs
+ * keyboard("foo") - translates to: f,o,o
+ * keyboard ("{Shift>}A{/Shift}") - translates to: Shift(down), A, Shift(up)
  */
