@@ -5,6 +5,8 @@
 // import { MuiMode } from "./components/mui/mui-mode";
 // import { AppProviders } from "./providers/app-providers";
 
+import { CounterTwo } from "./components/counter2/CounterTwo";
+
 function App() {
   return (
     <>
@@ -17,6 +19,7 @@ function App() {
           <MuiMode />
         </div>
       </AppProviders> */}
+      <CounterTwo count={0} />
     </>
   );
 }
