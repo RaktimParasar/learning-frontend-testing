@@ -2,9 +2,8 @@
 // import { Application } from "./components/application/Application";
 // import { Skills } from "./components/skills/Skills";
 // import { Counter } from "./components/counter/Counter";
-
-import { MuiMode } from "./components/mui/mui-mode";
-import { AppProviders } from "./providers/app-providers";
+// import { MuiMode } from "./components/mui/mui-mode";
+// import { AppProviders } from "./providers/app-providers";
 
 function App() {
   return (
@@ -13,11 +12,11 @@ function App() {
       {/* <Application /> */}
       {/* <Skills skills={["HTML", "CSS", "Javascript"]} /> */}
       {/* <Counter /> */}
-      <AppProviders>
+      {/* <AppProviders>
         <div className="App">
           <MuiMode />
         </div>
-      </AppProviders>
+      </AppProviders> */}
     </>
   );
 }
