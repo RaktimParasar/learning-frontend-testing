@@ -6,7 +6,7 @@
 // import { AppProviders } from "./providers/app-providers";
 // import { CounterTwo } from "./components/counter2/CounterTwo";
 
-import { Users } from "./components/users/Users";
+import { Users } from './components/users/Users'
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
       {/* <CounterTwo count={0} /> */}
       <Users />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
-import { SkillsProps } from "./Skills.types";
+import { SkillsProps } from './Skills.types'
 
 export const Skills = ({ skills }: SkillsProps) => {
-  const [islogin, setIslogin] = useState<Boolean>(false);
+  const [islogin, setIslogin] = useState<Boolean>(false)
 
   useEffect(() => {
-    setTimeout(() => setIslogin(true), 500);
-  }, []);
+    setTimeout(() => setIslogin(true), 500)
+  }, [])
 
   return (
     <>
@@ -17,8 +17,12 @@ export const Skills = ({ skills }: SkillsProps) => {
         ))}
       </ul>
       <div>
-        {islogin ? <button>Start learning</button> : <button onClick={() => setIslogin(true)}>Login</button>}
+        {islogin ? (
+          <button>Start learning</button>
+        ) : (
+          <button onClick={() => setIslogin(true)}>Login</button>
+        )}
       </div>
     </>
-  );
-};
+  )
+}
