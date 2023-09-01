@@ -4,8 +4,9 @@
 // import { Counter } from "./components/counter/Counter";
 // import { MuiMode } from "./components/mui/mui-mode";
 // import { AppProviders } from "./providers/app-providers";
+// import { CounterTwo } from "./components/counter2/CounterTwo";
 
-import { CounterTwo } from "./components/counter2/CounterTwo";
+import { Users } from "./components/users/Users";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <MuiMode />
         </div>
       </AppProviders> */}
-      <CounterTwo count={0} />
+      {/* <CounterTwo count={0} /> */}
+      <Users />
     </>
   );
 }
